@@ -2,7 +2,7 @@
 public class Tester {
     public static void main(String[] args) throws Exception {
         Blob test = new Blob(
-                ".\\test\\test.txt");
+                "/test/test.txt");
 
         Index indexTest = new Index();
 

@@ -18,7 +18,7 @@ public class Blob {
         // takes path & locates parent's path
         // removes chars until locates "\\"
         int i = filePath.length() - 1;
-        while (filePath.charAt(i) != '\\' && i > 0) {
+        while (filePath.charAt(i) != '/' && i > 0) {
             // System.out.println(path.charAt(i));
             i--;
         }
@@ -29,12 +29,14 @@ public class Blob {
         // creates folder if does not exist
         File objectsFolder = new File(objectsFolderPath, "objects");
         objectsFolder.mkdirs();
+        objectsFolder.createNewFile();
 
         // hash
         hashFileString = hash(new File(filePath));
 
         // create file
-        String blobFile = objectsFolderPath + "\\objects\\" + hashFileString + ".txt";
+        String blobFile = objectsFolderPath + "/objects/" + hashFileString + ".txt";
+        System.out.println(blobFile);
         // System.out.println(blobFile);
         File blob = new File(blobFile);
         // if exists, wont create

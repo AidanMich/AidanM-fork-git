@@ -6,7 +6,7 @@ import java.nio.file.*;
 public class Index {
 
     // define path to folder I want to index - this is ok
-    String testFolderPath = ".\\test";
+    String testFolderPath = "tests";
 
     File indexFile;
     String indexPath = ""; // path to index.txt
@@ -33,8 +33,8 @@ public class Index {
 
     public void add(String fileName) throws Exception {
         // make new blob & file in obj folder
-        Blob addBlob = new Blob(testFolderPath + "\\" + fileName);
-
+        Blob addBlob = new Blob(testFolderPath + "/" + fileName);
+        System.out.println("hello im after blob");
         String hash = addBlob.getHashString();
 
         // write to index
